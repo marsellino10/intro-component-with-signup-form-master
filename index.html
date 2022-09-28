@@ -1,57 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-    <title>Frontend Mentor | Intro component with sign up form</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Weather App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Outfit:wght@400;700&family=Overpass:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    
+    <main>
+        <h1>Responsive Weather App by the open Weather API</h1>
+        <section id="searchBar" class="searchBar">
+            <form id = "searchBar__form" class="searchBar__form" role="search">
+                <label for="searchBar__text">Enter a new location</label>
+                <input type="text" id="searchBar__text" class="searchBar__text" role="searchbox" size="40"
+                        autocomplete="off" placeholder="City, State, Country">
+                <button id="serachBar__btn" class="serachBar__btn">
+                    <i class="fa fa-search"></i>
+                </button>
+            </form>
+        </section>
 
-  <main>
+        <a href="#currentForecast" class="skip-link">Skip to current conditions</a>
 
-    <section class="learn">
-      <div class="left-side">
-        <h1>Learn to code by watching others</h1>
-        <p>See how experienced developers solve problems in real-time. Watching scripted tutorials is great, 
-          but understanding how developers think is invaluable. </p>
-      </div>
-    </section>
+        <section id="currentForecast" class="currentForecast" role="region" aria-labelledby="currentForecast__location">
+            <h2 id="currentForecast__location" class="currentForecast__location">current conditions</h2>
+            <div id="currentForecast__conditions" class="currentForecast__conditions"></div>
+        </section>
 
-    <section class="right-side">
-      <div class="offer">
-        <span>Try it free 7 days </span> then $20/mo. thereafter
-      </div>
+        <a href="#dailyForecast" class="skip-link">Skip to six days forecast</a>
 
-      <form action="#" id="form">
-        <div id="first-name">
-          <input type="text" placeholder="First Name" id="firstName">
-          <span class="err"></span>
-        </div>
+        <nav id="navBtn" class="navBtn">
+            <button id="getLocation" class="button" aria-label="get your current weather conditions for your current location" title="Get Location">
+                <i class="fas fa-map-marker-alt"></i>
+            </button>
 
-        <div id="last-name">
-          <input type="text" placeholder="Last Name" id="lastName">
-          <span class="err"></span>
-        </div>
+            <button id="home" class="button" aria-label="get your current weather conditions for your home location" title="Home Weather">
+                <i class="fas fa-home"></i>
+            </button>
 
-        <div id="email">
-          <input type="text" placeholder="Email Address" id="emailAddress">
-          <span class="err"></span>
-        </div>
+            <button id="saveLocation" class="button" aria-label="save your current location as your home location" title="save Location">
+                <i class="fas fa-save"></i>
+            </button>
 
-        <div id="pass">
-          <input type="password" placeholder="Password" id="password">
-          <span class="err"></span>
-        </div>
+            <button id="unit" class="button" aria-label="toogle between metric and imperial measurment units" title="toogle measurment unit">
+                <i class="fas fa-chart-bar"></i>
+            </button>
 
-        <button class="btn" type="submit">Claim your free trial</button>
-        <p>By clicking the button, you are agreeing to our <span>Terms and Services</span> </p> 
-      </form>
-    </section>
-  </main>
-  <script src="main.js"></script>
+            <button id="refresh" class="button" aria-label="Refresh the current weather conditions" title="refresh weather">
+                <i class="fas fa-refresh"></i>
+            </button>
+        </nav>
+
+        <hr>
+
+        <section id="dailyForecast" class="dailyForecast" role="region" aria-labelledby="dailyForecast__title">
+            <h2 id="dailyForecast__title" class="dailyForecast__title">Six days forecast</h2>
+            <div id="dailyForecast__contents" class="dailyForecast__contents"></div>
+        </section>
+
+        <p id="confirmation" class="offscreen" aria-live="assertive"></p>
+    </main>
+
 </body>
 </html>
