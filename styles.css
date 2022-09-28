@@ -33,7 +33,7 @@ main{
 }
 
 .right-side{
-    width: 80em;
+    width: 60em;
     display: flex;
     flex-direction: column;
     justify-content: center;
